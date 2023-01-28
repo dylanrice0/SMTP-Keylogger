@@ -1,4 +1,4 @@
-**DISCLAIMER: This tool was made as a research project in order to gain a further understanding of the offensive tools that red teamers possess. It is for Educational Purposes only**
+**DISCLAIMER: THIS IS FOR EDUCATIONAL PURPOSES ONLY. This tool was made as a research project in order to gain a further understanding of the offensive tools that red teamers possess.**
 
 # SMTP-Keylogger
 The  keylogger code I wrote is designed to capture user keystrokes and store them in a text file. The code first imports the 'pynput' library, which is used to detect keystrokes. It then creates a function called 'log_keypress', which stores each keystroke in a text file called 'keylog.txt'. The code also creates a listener to detect key presses and call the 'log_keypress' function.
